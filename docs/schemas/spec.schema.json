@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bob SDLC Feature Specification",
+  "type": "object",
+  "required": ["id", "title", "status", "problem", "requirements", "acceptance_criteria", "open_questions", "decisions"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^FEAT-[0-9]{3,}$"},
+    "title": {"type": "string", "minLength": 1},
+    "status": {"enum": ["draft", "blocked", "approved", "implemented", "verified"]},
+    "problem": {"type": "string"},
+    "actors": {"type": "array", "items": {"type": "string"}},
+    "constraints": {"type": "array", "items": {"type": "string"}},
+    "requirements": {"type": "array", "items": {"type": "object", "required": ["id", "description"], "properties": {"id": {"type": "string"}, "description": {"type": "string"}, "priority": {"enum": ["must", "should", "could"]}}}},
+    "acceptance_criteria": {"type": "array", "items": {"type": "object", "required": ["id", "requirement_id", "given", "when", "then"], "properties": {"id": {"type": "string"}, "requirement_id": {"type": "string"}, "given": {"type": "string"}, "when": {"type": "string"}, "then": {"type": "string"}}}},
+    "open_questions": {"type": "array", "items": {"type": "object", "required": ["id", "question", "blocking", "status"], "properties": {"id": {"type": "string"}, "question": {"type": "string"}, "owner": {"type": "string"}, "blocking": {"type": "boolean"}, "status": {"enum": ["open", "answered"]}, "answer": {"type": "string"}}}},
+    "decisions": {"type": "array", "items": {"type": "object", "required": ["id", "topic", "options", "status"], "properties": {"id": {"type": "string"}, "topic": {"type": "string"}, "options": {"type": "array", "items": {"type": "string"}}, "selected": {"type": "string"}, "rationale": {"type": "string"}, "status": {"enum": ["proposed", "approved", "rejected"]}}}},
+    "nonfunctional_requirements": {"type": "array", "items": {"type": "string"}},
+    "observability": {"type": "array", "items": {"type": "string"}}
+  }
+}

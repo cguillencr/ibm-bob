@@ -1,0 +1,29 @@
+id: FEAT-001
+title: Example feature
+status: blocked
+problem: Describe user problem and expected outcome
+actors: [end_user]
+constraints: []
+requirements:
+  - id: REQ-001
+    description: Describe observable behavior
+    priority: must
+acceptance_criteria:
+  - id: AC-001
+    requirement_id: REQ-001
+    given: an authenticated user
+    when: the user requests the feature
+    then: the documented outcome occurs
+open_questions:
+  - id: Q-001
+    question: Which authentication provider is required?
+    owner: product_owner
+    blocking: true
+    status: open
+decisions:
+  - id: DEC-001
+    topic: Authentication integration approach
+    options: [existing identity provider, new integration]
+    status: proposed
+nonfunctional_requirements: []
+observability: []
