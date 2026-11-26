@@ -25,10 +25,10 @@ Analyst (specifications and decisions) → Developer (implementation and unit te
 
 - `.bob/custom_modes.yaml`: IBM Bob project mode definitions
 - `.bob/rules-*/`: mode-specific rules loaded alphabetically
-- `docs/`: project documentation, including role guides (not auto-loaded), schemas, templates, examples, evaluation plans, and project extension guidance
+- `docs/`: project documentation, including evaluation plans, experiments and project extension guidance
 - `docs/permissions-and-integrations.md`: least-privilege permission matrix and MCP design
 - `medium/`: public English article drafts and editorial notes
-- `.bob/skills/`: seven **generic** task-specific Bob skills (`SKILL.md` plus `checklist.md`); technology/vendor skills are intentionally absent
+- `.bob/skills/`: seven **generic** task-specific Bob skills (`SKILL.md` plus `checklist.md`, and optional `templates/`, `schemas/` and `examples/`); technology/vendor skills are intentionally absent
 
 ## Skills and Rules vs. Skills
 
@@ -36,14 +36,14 @@ The starter now includes seven generic project skills: requirements specificatio
 
 ## Important caveats
 
-The YAML and skill front matter follow user-supplied IBM Bob documentation. The seven skills have been validated structurally but not activated in Bob. It has been parsed locally but **not loaded or executed inside IBM Bob**. MCP servers are not installed by these files. `fileRegex` controls Bob's edit tool group, not terminal/MCP writes. Never publish confidential IBM/client details or secrets. Explicit human approval is required for external writes and production actions.
+The YAML and skill front matter follow the official IBM Bob documentation. The seven skills have been validated structurally but not activated in Bob. It has been parsed locally but **not loaded or executed inside IBM Bob**. MCP servers are not installed by these files. `fileRegex` controls Bob's edit tool group, not terminal/MCP writes. Never publish confidential IBM/client details or secrets. Explicit human approval is required for external writes and production actions.
 
 ## Custom rules
 Shared workspace rules live in `.bob/rules/`; role-specific rules in `.bob/rules-{slug}/`. See `docs/custom-rules.md`. The Developer clean-code convention and QA test/defect contracts are implemented as rules. A portable security baseline and its proposed assessment experiment are documented in `docs/security-rule-experiment.md`.
 
 ## Developer clean-code extension
 
-The generic Developer mode includes seven focused, language-agnostic rule files under `.bob/rules-developer/` (`03`–`09`). They cover named boolean conditions, guard clauses, meaningful naming, cohesive functions, error handling, design principles, testing, refactoring and code review. See [`docs/developer.md`](docs/developer.md) and the draft [`medium/articles/11-teaching-bob-clean-code.md`](medium/articles/11-teaching-bob-clean-code.md). These are contextual guidelines, not guarantees or substitutes for tests and human review.
+The generic Developer mode includes seven focused, language-agnostic rule files under `.bob/rules-developer/` (`03`–`09`). They cover named boolean conditions, guard clauses, meaningful naming, cohesive functions, error handling, design principles, testing, refactoring and code review. See the [`code-review` skill](.bob/skills/code-review/SKILL.md) and the draft [`medium/articles/11-teaching-bob-clean-code.md`](medium/articles/11-teaching-bob-clean-code.md). These are contextual guidelines, not guarantees or substitutes for tests and human review.
 
 ## MCP server extension model
 

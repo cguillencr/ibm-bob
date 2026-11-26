@@ -32,7 +32,7 @@ Rule directories are read recursively; files load alphabetically by filename; em
 
 The generic Developer mode uses topical files `03-clean-code.md` through `09-code-review.md` in `.bob/rules-developer/`. Bob loads the directory alphabetically and combines it with the mode's `customInstructions`. These rules are language-agnostic; project-specific conventions can be added at workspace level. They emphasize intention-revealing named boolean expressions, guard clauses, meaningful naming, cohesive functions, explicit error handling, sensible abstractions, safe refactoring and review evidence.
 
-See [Developer documentation](developer.md) and [the evaluation plan](experiments/evaluation-plan.md). Do not interpret guidance as absolute rules or proof of correctness.
+See the [`code-review` skill](../.bob/skills/code-review/SKILL.md) and [the evaluation plan](experiments/evaluation-plan.md). Do not interpret guidance as absolute rules or proof of correctness.
 
 
 ## Workflows belong in skills
